@@ -19,7 +19,8 @@ because many other important neighbourhood structures, such as,
 and *Minimal Spanning Tree*,
 can be derived from it [Toussaint 80].
 
-PyDelaunay is a python implementation of "An Incremental Algorithm for the Construction of Delaunay Diagram".
+PyDelaunay is a python implementation of "An Incremental Algorithm for the Construction of Delaunay Diagram"
+based on the work of [Guibas & Stolfi 85].
 The main algorithm is implemented in `TinAlgo.py`. We has supplied a convenience `TinBuild.py` to
 run the algorithm easier via commandline input.
 
@@ -53,3 +54,6 @@ p    Produce output suitable for input to plot (1), rather than the forms
 * Note: The `TinAlgo.py` only requires the standard Python library. However, if you want to
 use the plot function provided by `TinBuild.py`, you need python installation of
 NumPy and MathPlotLib.
+
+## References
+* [Guibas & Stolfi 85] Leonidas Guibas and Jorge Stolfi, *Primitives for the Manipulation of General Subdivisions and the Computation of Voronoi Diagrams*, ACM Trans. on Graphics, Vol 4. no.2, April 1985, pp 75-123.
