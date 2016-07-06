@@ -55,7 +55,7 @@ You can execute `TinBuild.py`, plotting both Voronoi and Delaunay tessellation i
 python TinBuild.py -v -t -p test.pts
 ```
 
-![Vorontoi/Delaunay Tessellation Plot Output]({{ site.baseurl }}images/model-of-spatial-construction/PyDelaunay_TinBuild_Plot.jpg)
+![Vorontoi/Delaunay Tessellation Plot Output](images/PyDelaunay_TinBuild_Plot.jpg)
 
 Another test program is `TinAlgoTest.py`.
 It generates 100 random points to construct both Voronoi and Delaunay tessellation. Then, it plots the output to the matplotlib window.
