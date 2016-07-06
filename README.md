@@ -56,7 +56,7 @@ python TinBuild.py -v -t -p test.pts
 ![Vorontoi/Delaunay Tessellation Plot Output](images/PyDelaunay_TinBuild_Plot.jpg)
 
 Another test program `TinAlgoTest.py` can be used for experiment.
-It randomly generates 100 points to construct both Voronoi and Delaunay tessellation. Then, it plots the output to interactive mathplotlib window.
+It randomly generates 100 points to construct both Voronoi and Delaunay tessellation. Then, it plots the output to interactive matplotlib window.
 
 * Note: The `TinAlgo.py` only requires the standard Python library. However, if you want to use the plot function provided by `TinAlgoTest.py` or `TinBuild.py`, you need to install NumPy and mathplotlib.
 
