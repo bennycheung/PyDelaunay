@@ -2,7 +2,7 @@
 #
 # Voronoi diagram calculator/ Delaunay triangulator
 #
-# Calculate Delaunay triangulation or the Voronoi polygons for a set of 
+# Calculate Delaunay triangulation or the Voronoi polygons for a set of
 # 2D input points.
 #
 #############################################################################
@@ -21,23 +21,21 @@ TinBuild - compute Voronoi diagram or Delaunay triangulation
 
 TinBuild [-t -v -p -d]  [filename]
 
-TinBuild reads from filename (or standard input if no filename given) for a set 
-of points in the plane and writes either the Voronoi diagram or the Delaunay 
-triangulation to the standard output.  Each input line should consist of two 
+TinBuild reads from filename (or standard input if no filename given) for a set
+of points in the plane and writes either the Voronoi diagram or the Delaunay
+triangulation to the standard output.  Each input line should consist of two
 real numbers, separated by white space.
 
-If option -t is present, the Delaunay triangulation is produced. 
+If option -t is present, the Delaunay triangulation is produced.
 Each output line is a triple i j k, which are the indices of the three points
 in a Delaunay triangle. Points are numbered starting at 0.
 
-If option -t is not present, the Voronoi diagram is produced.  
+If option -v is present, the Voronoi diagram is produced.
 
 Other options include:
 
-d    Plot grpahically debugging
-
-p    Produce output suitable for input to plot (1), rather than the forms 
-     described above.
+d    Output textually
+p    Plot graphically
 
 """
 #------------------------------------------------------------------
@@ -60,7 +58,7 @@ class Context( object ):
             self.ymax = bounds.ymax
         else:
             self.xmin = self.ymin = self.xmax = self.ymax = None
-        
+
 
 # Draw the delaunay triangles
 def draw_delaunay(builder, sites):
@@ -84,7 +82,7 @@ def draw_triangle(edge):
     p1 = edge.dest()
     p2 = edge.lnext().dest()
     plt.plot([p0.x,p1.x], [p0.y,p1.y], 'g--')
-    
+
     # recurse to the left face edges
     ledge= edge.onext()
     if (ledge._qedge.mark == 0):
@@ -105,7 +103,7 @@ def draw_triangle(edge):
     if (redge._qedge.mark == 0):
         draw_triangle(redge)
 
-    
+
 
 def draw_triangles(builder, sites):
     base = builder.locateSite(sites[0])
@@ -119,7 +117,7 @@ if __name__=="__main__":
     except getopt.GetoptError:
         usage()
         sys.exit(2)
-      
+
     doHelp = 0
     c = Context()
     c.doPrint = 1
@@ -172,14 +170,6 @@ if __name__=="__main__":
             for i in range(0, len(tin)):
                 (p0, p1, p2) = tin[i]
                 print "t %d %d %d %d" %(i, p0, p1, p2)
-                pt0 = pts[p0]
-                pt1 = pts[p1]
-                pt2 = pts[p2]
-                plt.plot([pt0.x,pt1.x,pt2.x,pt0.x], [pt0.y,pt1.y,pt2.y,pt0.y], 'b')
-
-            plt.plot([p.x for p in pts], [p.y for p in pts], 'ro')
-            plt.axis([sl.xmin, sl.xmax, sl.ymin, sl.ymax])
-            plt.show()
 
         if c.voronoi:
             vor = builder.getVoronoi(pts)
