@@ -60,7 +60,5 @@ It randomly generates 100 points to construct both Voronoi and Delaunay tessella
 
 * Note: The `TinAlgo.py` only requires the standard Python library. However, if you want to use the plot function provided by `TinAlgoTest.py` or `TinBuild.py`, you need to install NumPy and mathplotlib.
 
-* D3.js has a library to construct Voronoi tessellation, see it at [d3.voronoi](https://github.com/d3/d3-voronoi).
-
 ## References
 * [Guibas & Stolfi 85] Leonidas Guibas and Jorge Stolfi, *Primitives for the Manipulation of General Subdivisions and the Computation of Voronoi Diagrams*, ACM Trans. on Graphics, Vol 4. no.2, April 1985, pp 75-123.
